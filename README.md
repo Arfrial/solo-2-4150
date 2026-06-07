@@ -1,17 +1,62 @@
-# solo_2
+# Fishing Lure Picker
 
-A new Flutter project.
+## What the App Does
 
-## Getting Started
+This Flutter app recommends a fishing lure and lure color based on the selected water clarity and time of day. The user selects both options and presses **Recommend Lure** to see the result.
 
-This project is a starting point for a Flutter application.
+## How to Run
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+flutter pub get
+flutter run
+```
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Color Palette
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The app cycles through 5 colors when the user taps an empty area of the screen:
+
+* White
+* Blue
+* Green
+* Orange
+* Black
+
+Text and icons automatically switch between black and white using `computeLuminance()` to ensure readability.
+
+## Sample Tests
+
+### Test 1
+
+**Input:**
+
+* Clear
+* Morning
+
+**Output:**
+
+* Topwater Popper
+* Natural Shad
+
+### Test 2
+
+**Input:**
+
+* Stained
+* Afternoon
+
+**Output:**
+
+* Crankbait
+* Red Craw
+
+### Edge Case
+
+**Input:**
+
+* No selections made
+
+**Output:**
+
+* "Please select water clarity."
+* "Please select a time of day."
+
